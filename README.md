@@ -17,14 +17,12 @@ Python 版本：3.6 及以上
 安装步骤
 克隆项目
 
-bash
+
 复制代码
 git clone https://github.com/yourusername/your-repo-name.git
 cd your-repo-name
 创建虚拟环境（可选）
 
-bash
-复制代码
 python -m venv venv
 # 激活虚拟环境
 # Windows:
@@ -32,14 +30,6 @@ venv\Scripts\activate
 # macOS/Linux:
 source venv/bin/activate
 安装依赖库
-
-bash
-复制代码
-pip install -r requirements.txt
-如果没有 requirements.txt 文件，请手动安装所需的依赖库：
-
-bash
-复制代码
 pip install \
     PyQt5 \
     transformers \
@@ -61,15 +51,13 @@ pip install \
 
 下载 NLTK 数据
 
-python
-复制代码
+
 import nltk
 nltk.download('punkt')
 配置指南
 在使用应用程序之前，需要配置相关的 API 密钥。请在项目根目录下创建一个 .env 文件，并添加以下内容：
 
-env
-复制代码
+
 BAIDU_APP_ID=your_baidu_app_id
 BAIDU_SECRET_KEY=your_baidu_secret_key
 KIMI_API_KEY=your_kimi_api_key
@@ -78,6 +66,7 @@ OPENAI_API_KEY=your_openai_api_key
 OPENAI_BASE_URL=https://api.openai.com/v1
 ANTHROPIC_API_KEY=your_anthropic_api_key  # 可选
 ANTHROPIC_BASE_URL=https://api.anthropic.com  # 可选
+
 重要提示：
 
 安全性：请确保不要将包含敏感信息的 .env 文件上传到公共仓库。
@@ -86,20 +75,16 @@ API 密钥获取：
 Kimi API：根据官方指南获取相应的 API 密钥。
 OpenAI API：前往 OpenAI 官方网站 注册并获取。
 Anthropic Claude API：根据官方渠道获取（如果使用）。
-使用说明
-运行应用程序
 
-bash
-复制代码
-python translator_app.py
-界面说明
+
+**使用说明**
 
 输入文本区域：在此输入需要翻译的文本。
 源语言和目标语言选择：从下拉菜单中选择源语言和目标语言，支持自动检测。
 翻译引擎选择：可选择百度翻译 API、Kimi API 或 OpenAI API。
 
 
-功能按钮：
+**功能按钮：**
 翻译：开始翻译输入的文本。
 导入翻译记忆库：导入外部翻译记忆库文件，支持 CSV、Excel、TMX、Word 等格式。
 导出翻译记忆库：将当前的翻译记忆库导出为指定格式。
@@ -108,15 +93,15 @@ python translator_app.py
 导出为 Word：将翻译结果导出为 Word 文档。
 清空记忆库：一键清除所有翻译记忆数据（操作不可撤销，请谨慎使用）。
 翻译结果区域：显示源文本和译文的对照表。
-翻译流程
 
+**翻译流程**
 输入文本：在输入区域输入需要翻译的文本，可以是段落或整篇文章。
 设置语言和翻译引擎：选择源语言、目标语言和翻译引擎。
 开始翻译：点击“翻译”按钮，应用程序将自动处理文本，包括分句、术语替换、查找相似句子等。
 查看结果：翻译结果将在下方的输出区域以对照表形式显示。
 管理翻译记忆库：可随时导入、导出或查看翻译记忆库，以保持翻译的一致性。
 
-功能详解
+**功能详解**
 多引擎翻译支持
 百度翻译 API：需要设置 BAIDU_APP_ID 和 BAIDU_SECRET_KEY。
 Kimi API：需要设置 KIMI_API_KEY，可自定义 KIMI_BASE_URL。
@@ -135,6 +120,8 @@ OpenAI API：需要设置 OPENAI_API_KEY，可自定义 OPENAI_BASE_URL。
 FAISS 索引：利用 FAISS 进行高效的相似句子检索。
 向量化：使用 BERT 模型将句子向量化，计算相似度。
 应用：在翻译时，若发现相似度高的句子，直接使用记忆库中的译文。
+
+
 开发者指南
 主要技术栈
 PyQt5：构建图形用户界面。
@@ -149,6 +136,7 @@ translator_app.py：主应用程序代码，包含界面逻辑和主要功能实
 translation_memory.db：SQLite 数据库文件，存储翻译记忆库和术语库。
 faiss_index.bin：FAISS 索引文件，用于相似句子检索。
 id_map.pkl：索引与数据库 ID 的映射文件。
+
 常见问题
 Q：运行程序时提示缺少依赖库。
 
@@ -168,30 +156,12 @@ A：请确保文件格式正确，文件内容符合要求，必要时可查看�
 如何贡献
 Fork 仓库：点击页面右上角的 Fork 按钮，创建项目的副本。
 
-创建分支：在本地仓库中创建新分支用于开发。
 
-bash
-复制代码
-git checkout -b feature/your-feature-name
-提交更改：将您的更改提交到新分支。
-
-bash
-复制代码
-git commit -am 'Add some feature'
-推送分支：
-
-bash
-复制代码
-git push origin feature/your-feature-name
-创建 Pull Request：在 GitHub 上提交 Pull Request，我们会尽快进行审核。
-
-许可证
-本项目采用 MIT 许可证进行许可。详情请参阅 LICENSE 文件。
 
 联系方式
 如有任何问题或建议，请通过以下方式与我们联系：
 
-邮箱：your.email@example.com
+邮箱：bisu520@88.com
 GitHub Issues：欢迎在项目的 Issues 页面提出问题。
 
 
