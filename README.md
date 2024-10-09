@@ -13,7 +13,7 @@
 安装指南
 环境要求
 Python 版本：3.6 及以上
-操作系统：Windows、macOS 或 Linux
+操作系统：Windows
 安装步骤
 克隆项目
 
@@ -27,8 +27,6 @@ python -m venv venv
 # 激活虚拟环境
 # Windows:
 venv\Scripts\activate
-# macOS/Linux:
-source venv/bin/activate
 安装依赖库
 pip install \
     PyQt5 \
